@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Empleados;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -39,7 +40,19 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         //
-        return view('empleados.store');
+
+       // $datosEmpleado = request()->all();
+
+        $datosEmpleado = request()->except('_token');
+
+        if($request->hasFile('Foto')){
+
+            $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
+        }
+
+        Empleados::insert($datosEmpleado);
+     
+        return response()->json($datosEmpleado);
     }
 
     /**
