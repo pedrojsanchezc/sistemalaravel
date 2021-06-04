@@ -1,34 +1,65 @@
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+
+@if(count($errors)>0)
+<div class="alert alert-primary" role="alert">
+     <ul>
+          @foreach($errors->all() as $error)
+          <li> {{ $error }}</li>
+          @endforeach
+     </ul>
+
+</div>
+@endif
+
 Sección para crear empleados
 
-<form action="{{ route('empleados.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <input type="text" name="prueba">
-    <input type="submit">
-</form>
-
-
-<form action="{{url('/empleados')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('/empleados')}}" class="form-horizontal" method="POST" enctype="multipart/form-data">
      {{ csrf_field() }}
 
-    <label for="Nombre">{{'Nombre'}}</label>
-    <input type="text" name="Nombre" id="Nombre" value="">
-    <br/>
+<div class="form-group">
+<label for="Nombre" class="control-label">{{'Nombre'}}</label>
+<input type="text" class="form-control {{$errors->has('Nombre') ? 'is-invalid':''}}" name="Nombre" id="Nombre" value="{{ isset($empleado->Nombre)?$empleado->Nombre:''}}">
+</div>
 
-    <label for="ApellidoPaterno">{{'Apellido Paterno'}}</label>
-    <input type="text" name="ApellidoPaterno" id="ApellidoPaterno" value="">
-    <br/>
+<div class="form-group">
+<label for="Apellido" class="control-label">{{'Apellido'}}</label>
+<input type="text" class="form-control" name="Apellido" id="Apellido" value="{{ isset($empleado->Apellido)?$empleado->Apellido:''}}">
+</div>
 
-    <label for="ApellidoMaterno">{{'Apellido Materno'}}</label>
-    <input type="text" name="ApellidoMaterno" id="ApellidoMaterno" value="">
-    <br/>
+<div class="form-group">
+<label for="Empresa" class="control-label">{{'Empresa'}}</label>
+<input type="text" class="form-control" name="Empresa" id="Empresa" value="{{ isset($empleado->Empresa)?$empleado->Empresa:''}}">
+</div>
 
-    <label for="Correo">{{'Correo'}}</label>
-    <input type="email" name="Correo" id="Correo" value="">
-    <br/>
+<div class="form-group">
+<label for="Correo" class="control-label">{{'Correo'}}</label>
+<input type="email" class="form-control" name="Correo" id="Correo" value="">
+</div>
 
-    <label for="Foto">{{'Foto'}}</label>
-    <input type="file" name="Foto" id="Foto" value="">
-    <br/>
-    
-    <input type="submit" value="Agregar">
+<div class="form-group">
+     <label for="Telefono" class="control-label">{{'Telefono'}}</label>
+     <input type="number" class="form-control" name="Telefono" id="Telefono" value="">
+</div>
+
+{{--
+<div class="form-group">
+<label for="Foto" class="control-label">{{'Foto'}}</label>
+@if(isset($empleado -> Foto))
+<br/>
+<img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$empleado -> Foto}}" alt="" width="200">
+<br/>
+@endif
+<input type="file" class="form-control" name="Foto" id="Foto" value="">
+</div>--}}
+
+<input type="submit" class="btn btn-success" value="Agregar">
+
+<a class="btn btn-primary" href="{{url('empleados')}}">Regresar</a>
+
 </form>
+</div>
+@endsection
