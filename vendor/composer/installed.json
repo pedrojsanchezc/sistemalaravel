@@ -1,6 +1,74 @@
 {
     "packages": [
         {
+            "name": "appzcoder/crud-generator",
+            "version": "v3.2.2",
+            "version_normalized": "3.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appzcoder/crud-generator.git",
+                "reference": "662840d2e69d1523bd19fafb8402d3dc52293e9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appzcoder/crud-generator/zipball/662840d2e69d1523bd19fafb8402d3dc52293e9d",
+                "reference": "662840d2e69d1523bd19fafb8402d3dc52293e9d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.3|^6.0|^7.0|^8.0",
+                "laravelcollective/html": "^5.3|^6.0",
+                "php": ">=5.6.4|>=7.0|>=8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.3|^4.0|^5.0",
+                "phpunit/phpunit": "^5.7|^8.0|^9.0"
+            },
+            "time": "2021-05-25T16:27:56+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Appzcoder\\CrudGenerator\\CrudGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Appzcoder\\CrudGenerator\\": "src/"
+                },
+                "classmap": [
+                    "tests"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sohel Amin",
+                    "email": "sohelamincse@gmail.com",
+                    "homepage": "http://www.appzcoder.com"
+                }
+            ],
+            "description": "Laravel CRUD Generator",
+            "keywords": [
+                "API generator",
+                "crud",
+                "crud generator",
+                "laravel",
+                "laravel crud generator"
+            ],
+            "support": {
+                "issues": "https://github.com/appzcoder/crud-generator/issues",
+                "source": "https://github.com/appzcoder/crud-generator/tree/v3.2.2"
+            },
+            "install-path": "../appzcoder/crud-generator"
+        },
+        {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
             "version_normalized": "2.0.3.0",
@@ -2173,6 +2241,81 @@
                 "source": "https://github.com/laravel/ui/tree/v3.3.0"
             },
             "install-path": "../laravel/ui"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v6.2.1",
+            "version_normalized": "6.2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "ae15b9c4bf918ec3a78f092b8555551dd693fde3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/ae15b9c4bf918ec3a78f092b8555551dd693fde3",
+                "reference": "ae15b9c4bf918ec3a78f092b8555551dd693fde3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "illuminate/routing": "^6.0|^7.0|^8.0",
+                "illuminate/session": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "illuminate/view": "^6.0|^7.0|^8.0",
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~8.5"
+            },
+            "time": "2020-12-15T20:20:05+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                },
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "support": {
+                "issues": "https://github.com/LaravelCollective/html/issues",
+                "source": "https://github.com/LaravelCollective/html"
+            },
+            "install-path": "../laravelcollective/html"
         },
         {
             "name": "league/commonmark",
@@ -8414,6 +8557,7 @@
     ],
     "dev": true,
     "dev-package-names": [
+        "appzcoder/crud-generator",
         "doctrine/instantiator",
         "facade/flare-client-php",
         "facade/ignition",
@@ -8422,6 +8566,7 @@
         "filp/whoops",
         "hamcrest/hamcrest-php",
         "laravel/sail",
+        "laravelcollective/html",
         "mockery/mockery",
         "myclabs/deep-copy",
         "nunomaduro/collision",
