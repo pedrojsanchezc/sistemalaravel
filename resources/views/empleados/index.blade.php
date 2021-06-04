@@ -46,10 +46,7 @@
         @foreach($empleados as $empleado)
         <tr>
             <td>{{$loop->iteration}}</td>
-            {{--<td>
-            <img src="{{ asset('storage').'/'.$empleado -> Foto}}" class="img-thumbnail img-fluid" alt="" width="100">
-            </td>--}}
-            <td>{{$empleado -> Nombre}}</td> {{--{{$empleado -> ApellidoPaterno}} {{$empleado -> ApellidoMaterno}}</td>--}}
+            <td>{{$empleado -> Nombre}}</td> 
             <td>{{$empleado -> Apellido}}</td>
             <td>{{$empleado -> Empresa}}</td>
             <td>{{$empleado -> Correo}}</td>

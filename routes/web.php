@@ -20,7 +20,6 @@ Route::get('/', function () {
 });
 
 
-//Route::resource('empleados', EmployeeController::class);
 Route::resource('empleados', EmployeeController::class)->middleware('auth');
 
 Auth::routes(['register'=>false,'reset'=>false]);
@@ -30,7 +29,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-//Route::resource('companies', 'companiesController');
 
 Route::resource('companies', companiesController::class);

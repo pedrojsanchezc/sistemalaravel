@@ -35,19 +35,6 @@ Sección para Editar
         <input type="number" class="form-control" name="Telefono" id="Telefono" value="{{   isset($empleado -> Telefono) ?$empleado -> Telefono: '' }}">
     </div>
 
-    {{--
-    <div class="form-group">
-    <label for="Foto" class="control-label">{{'Foto'}}</label>
-    <br/>
-    @if(isset($empleado -> Foto))
-    <br/>
-    <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$empleado -> Foto}}" alt="" width="200">
-    <br/>
-    @endif
-    <br/>
-    <input type="file" class="form-control" name="Foto" id="Foto" value="">
-    </div> --}}
-
     <input type="submit" class="btn btn-success" value="Modificar">
     
     <a class="btn btn-primary" href="{{url('empleados')}}">Regresar</a>
